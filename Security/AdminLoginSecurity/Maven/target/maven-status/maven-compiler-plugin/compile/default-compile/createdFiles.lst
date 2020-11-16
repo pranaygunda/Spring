@@ -1,0 +1,5 @@
+com\SecurityWebApplicationInitializer.class
+com\AppConfig.class
+com\controller\HomeController.class
+com\WebSecurityConfig.class
+com\MvcWebApplicationInitializer.class
