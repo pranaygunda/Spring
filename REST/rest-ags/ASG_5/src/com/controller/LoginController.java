@@ -16,22 +16,26 @@ import com.model.LoginModel;
 @RequestMapping("/user")
 public class LoginController {
 	
-	List<LoginModel> lm = new ArrayList<LoginModel>();
+	List<LoginModel> user = new ArrayList<LoginModel>();
 	LoginController(){
-		lm.add(new LoginModel("Pranay","pra"));
-		lm.add(new LoginModel("Naresh","nar"));
-		lm.add(new LoginModel("Parag","par"));
+		user.add(new LoginModel("Pranay","pra"));
+		user.add(new LoginModel("Naresh","nar"));
+		user.add(new LoginModel("Parag","par"));
 	}
 	
 	@RequestMapping(value="/validate",method=RequestMethod.POST)
-	public ResponseEntity<String> validateData(@RequestBody String name, String pwd){
+	public ResponseEntity<String> validateData(@RequestBody String ip){
+		String[] arr = ip.split(" ", 5);
+		String name = arr[0]; 
+		String pwd = arr[1];
 		boolean b = false;
-		for(LoginModel l : lm) {
-			if(l.getPwd().equals(pwd) && l.getName().contentEquals(name)) {
+		for(LoginModel u : user) {
+			if(u.getName().equals(name) && u.getPwd().equals(pwd) ) {
 				b=true;
 				break;
 			}
 		}
+		// System.out.println(name+" and "+pwd);
 		System.out.println(b ? "Valid User" : "Invalid User");
 		return new ResponseEntity(HttpStatus.CREATED);
 	}

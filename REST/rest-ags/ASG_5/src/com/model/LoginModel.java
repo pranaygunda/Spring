@@ -30,9 +30,5 @@ public class LoginModel {
 		return this.pwd;
 	}
 	
-	@Override
-	public String toString() {
-		return "Name : "+this.getName()+"\tAge : "+this.getPwd();
-	}
 	
 }
