@@ -1,4 +1,4 @@
-package com.common.ash.model;
+package com.model;
 
 public class ElectricModel {
 	

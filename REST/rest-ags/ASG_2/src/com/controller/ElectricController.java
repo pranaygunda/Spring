@@ -1,11 +1,11 @@
-package com.common.ash.controller;
+package com.controller;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.common.ash.model.ElectricModel;
+import com.model.ElectricModel;
 
 @RestController
 @RequestMapping("/totalbill")
